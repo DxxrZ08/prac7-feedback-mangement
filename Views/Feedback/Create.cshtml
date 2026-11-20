@@ -1,0 +1,70 @@
+@model StudentFeedbackMVC.Models.Feedback
+
+@{
+    ViewBag.Title = "Create Feedback";
+    Layout = "~/Views/Shared/_LayoutView.cshtml";
+}
+
+<div class="container">
+
+    @Html.Partial("_StudentInfo")
+
+    <h2>Feedback Form</h2>
+
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary(true)
+
+        <table cellpadding="8">
+
+            <tr>
+                <td>@Html.LabelFor(m => m.EnrollmentNo)</td>
+                <td>
+                    @Html.TextBoxFor(m => m.EnrollmentNo)
+                    @Html.ValidationMessageFor(m => m.EnrollmentNo)
+                </td>
+            </tr>
+
+            <tr>
+                <td>@Html.LabelFor(m => m.StudentName)</td>
+                <td>
+                    @Html.TextBoxFor(m => m.StudentName)
+                    @Html.ValidationMessageFor(m => m.StudentName)
+                </td>
+            </tr>
+
+            <tr>
+                <td>@Html.LabelFor(m => m.Subject)</td>
+                <td>
+                    @Html.TextBoxFor(m => m.Subject)
+                    @Html.ValidationMessageFor(m => m.Subject)
+                </td>
+            </tr>
+
+            <tr>
+                <td>@Html.LabelFor(m => m.Rating)</td>
+                <td>
+                    @Html.TextBoxFor(m => m.Rating)
+                    @Html.ValidationMessageFor(m => m.Rating)
+                </td>
+            </tr>
+
+            <tr>
+                <td>@Html.LabelFor(m => m.Comments)</td>
+                <td>
+                    @Html.TextAreaFor(m => m.Comments)
+                </td>
+            </tr>
+
+        </table>
+
+        <br />
+
+        <input type="submit" value="Submit Feedback" />
+    }
+
+    <br />
+
+    @Html.ActionLink("Back to Home", "Index", "Feedback")
+
+</div>

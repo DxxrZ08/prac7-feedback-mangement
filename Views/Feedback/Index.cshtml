@@ -1,0 +1,20 @@
+@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/_LayoutView.cshtml";
+}
+
+<div>
+
+    @Html.Partial("_StudentInfo")
+
+    <h2>Welcome to Feedback Management System</h2>
+
+    <p>
+        @Html.ActionLink("Give Feedback", "Create", "Feedback")
+    </p>
+
+    <p>
+        @Html.ActionLink("View Feedback", "List", "Feedback")
+    </p>
+
+</div>
